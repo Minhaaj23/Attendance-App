@@ -674,7 +674,7 @@ submitBtn.addEventListener('click', async () => {
       throw new Error((data && data.message) || "Unknown error from server.");
     }
   }catch(err){
-    statusLine.textContent = "Couldn't reach the attendance sheet. Try again.";
+    statusLine.textContent = "Error: " + (err.message || err);
     statusLine.className = "status-line err";
     submitBtn.disabled = false;
     return;
